@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "crew-template"
+version = "0.1.0"
+description = "Crew template"
+authors = ["Joao Moura, Brandon Hancock, Daniel Ball"]
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"
+crewai = "0.1.24"
+unstructured = '==0.10.25'
+pyowm = '3.3.0'
+python-dotenv = "1.0.0"
+langchain-openai = "^0.0.5"
+[tool.pdm.build]
+includes = []
+
+[project]
+authors = [
+    {name = "Joao Moura, Brandon Hancock, Daniel Ball"},
+]
+dependencies = [
+    "crewai",
+    "unstructured==0.10.25",
+    "pyowm==3.3.0",
+    "python-dotenv==1.0.0",
+    "langchain-openai<1.0.0,>=0.0.5",
+    "pytest>=8.3.4",
+    "crewai-tools>=0.36.0",
+    "black>=25.1.0",
+]
+name = "crew-template"
+version = "0.1.0"
+description = "Simple ai trip planner"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
