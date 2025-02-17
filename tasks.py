@@ -45,10 +45,10 @@ Key Steps for Task Creation:
 
 class Tasks:
 
-    def search_for_bananas(self, agent):
+    def search_for_bananas(self, agent, output_file_name):
         return Task(
             description="Summarise the first 10 search results for the word 'banana'.",
             agent=agent,
-            output_file="bananas.md",
+            output_file=output_file_name,
             expected_output="A summary of search results",
         )

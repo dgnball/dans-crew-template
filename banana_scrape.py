@@ -3,10 +3,11 @@ from agents import Agents
 from tasks import Tasks
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 
-class TripCrew:
+class ResearchCrew:
     def __init__(self):
         pass
 
@@ -19,7 +20,9 @@ class TripCrew:
         simple_search_agent = agents.simple_search_agent()
 
         # Custom tasks include agent name and variables as input
-        search_for_bananas = tasks.search_for_bananas(simple_search_agent)
+        search_for_bananas = tasks.search_for_bananas(
+            simple_search_agent, "banana_scrape.md"
+        )
 
         # Define your custom crew here
         crew = Crew(
@@ -35,6 +38,6 @@ class TripCrew:
 # This is the main function that you will use to run your custom crew.
 if __name__ == "__main__":
     print("## Welcome to Crew")
-    trip_crew = TripCrew()
+    trip_crew = ResearchCrew()
     result = trip_crew.run()
     print(result)

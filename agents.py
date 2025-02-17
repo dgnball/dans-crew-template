@@ -1,6 +1,6 @@
 from crewai import Agent
 
-from tools.search_tools import DuckDuckGoSearch
+from tools.search_tools import DuckDuckGoScrapeSearch, DuckDuckGoApiSearch
 
 """
 Notes:
@@ -18,6 +18,15 @@ class Agents:
             role="Simple Search Agent",
             backstory="I can get you a summary of search results from Duck Duck Go",
             goal="Return the Duck Duck Go search results",
-            tools=[DuckDuckGoSearch()],
+            tools=[DuckDuckGoScrapeSearch()],
+            verbose=True,
+        )
+
+    def simple_answer_agent(self):
+        return Agent(
+            role="Simple Answer Agent",
+            backstory="I can get you a summary of results from Duck Duck Go",
+            goal="Return the Duck Duck Go results",
+            tools=[DuckDuckGoApiSearch()],
             verbose=True,
         )

@@ -1,8 +1,20 @@
-from tools.search_tools import DuckDuckGoSearch
+from pprint import pprint
+
+from tools.search_tools import DuckDuckGoApiSearch, DuckDuckGoScrapeSearch
+
+
+def test_search_internet2():
+    response = DuckDuckGoApiSearch()._run("Are there places to eat in Hampshire?")
+    assert response == []
+
+
+def test_scrape_search():
+    response = DuckDuckGoScrapeSearch()._run("Are there places to eat in Hampshire?")
+    pprint(response)
 
 
 def test_search_internet():
-    response = DuckDuckGoSearch()._run("bananas")
+    response = DuckDuckGoApiSearch()._run("bananas")
     assert response == [
         {
             "FirstURL": "https://duckduckgo.com/Banana",
