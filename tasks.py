@@ -52,3 +52,12 @@ class Tasks:
             output_file=output_file_name,
             expected_output="A summary of search results",
         )
+
+    def make_a_nice_web_page(self, agent, output_file_name):
+        return Task(
+            description="Turn search results into a nice looking webpage",
+            agent=agent,
+            output_file=output_file_name,
+            expected_output="A html page",
+        )
+

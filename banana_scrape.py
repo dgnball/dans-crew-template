@@ -18,16 +18,20 @@ class ResearchCrew:
 
         # Define your custom agents and tasks here
         simple_search_agent = agents.simple_search_agent()
+        pretty_webpage = agents.pretty_webpage()
 
         # Custom tasks include agent name and variables as input
         search_for_bananas = tasks.search_for_bananas(
             simple_search_agent, "banana_scrape.md"
         )
+        make_a_nice_web_page = tasks.make_a_nice_web_page(
+            pretty_webpage, "banana_scrape.html"
+        )
 
         # Define your custom crew here
         crew = Crew(
-            agents=[simple_search_agent],
-            tasks=[search_for_bananas],
+            agents=[simple_search_agent, pretty_webpage],
+            tasks=[search_for_bananas, make_a_nice_web_page],
             verbose=True,
         )
 
