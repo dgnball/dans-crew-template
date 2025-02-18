@@ -46,7 +46,11 @@ class Agents:
         return Agent(
             role="Summarise an idea",
             backstory="I can read and digest the details of an idea webpage",
-            goal="Read the details of a page and summarise in less than 2-3 paragraphs",
+            goal="""
+            Read all the text on the page including the comments and summarise what the requirements are.
+            Don't include personal details of any users on the page such as the Submitted by or user_id.
+            Can you also include on the output the URL of this page.
+            """,
             tools=[ScrapeHubspotIdeas()],
             verbose=True,
         )
