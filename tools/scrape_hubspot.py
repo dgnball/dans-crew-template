@@ -32,7 +32,6 @@ class ScrapeHubspotIdea(BaseTool):
     description: str = "Get contents of idea page"
     args_schema: Type[BaseModel] = ScrapeHubspotIdeaInput
 
-    def _run(self, url: str) -> BeautifulSoup:
+    def _run(self, url: str) -> str:
         response = requests.get(url)
-        soup = BeautifulSoup(response.text, "html.parser")
-        return soup
+        return response.text
