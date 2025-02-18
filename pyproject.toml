@@ -2,7 +2,7 @@
 name = "crew-template"
 version = "0.1.0"
 description = "Crew template"
-authors = ["Joao Moura, Brandon Hancock, Daniel Ball"]
+authors = ["Daniel Ball"]
 
 [tool.poetry.dependencies]
 python = ">=3.10.0,<3.12"
@@ -16,7 +16,7 @@ includes = []
 
 [project]
 authors = [
-    {name = "Joao Moura, Brandon Hancock, Daniel Ball"},
+    {name = "Daniel Ball"},
 ]
 dependencies = [
     "crewai",
@@ -30,7 +30,7 @@ dependencies = [
 ]
 name = "crew-template"
 version = "0.1.0"
-description = "Simple ai trip planner"
+description = "Simple crews"
 
 [build-system]
 requires = ["pdm-backend"]
