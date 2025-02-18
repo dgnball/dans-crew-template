@@ -61,3 +61,22 @@ class Tasks:
             expected_output="A html page",
         )
 
+    def get_top_ideas(self, agent, output_file_name):
+        return Task(
+            description="Get me the top Hubspot ideas",
+            agent=agent,
+            output_file=output_file_name,
+            expected_output="A list of ideas",
+        )
+
+    def get_idea_details(self, agent, output_file_name):
+        return Task(
+            description="""
+            Take the list at the top of the ideas with the most Upvotes
+            and pass the Read More Link to the URL argument for the scraper.
+            Summarise the result.
+            """,
+            agent=agent,
+            output_file=output_file_name,
+            expected_output="A markdown file describing the idea",
+        )
