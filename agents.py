@@ -30,3 +30,11 @@ class Agents:
             tools=[DuckDuckGoApiSearch()],
             verbose=True,
         )
+
+    def pretty_webpage(self):
+        return Agent(
+            role="Convert markdown to html",
+            backstory="I can create a themed page for markdown content",
+            goal="Make boring markdown look fun",
+            verbose=True,
+        )
